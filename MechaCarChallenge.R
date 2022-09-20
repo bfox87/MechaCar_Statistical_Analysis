@@ -1,4 +1,4 @@
-# Deliv 1:
+# Deliverable 1:
 
 # Loading in dplyr package with library() function.
 library(dplyr)
@@ -9,10 +9,10 @@ mechaMpg <- read.csv(file='MechaCar_mpg.csv',check.names = F,stringsAsFactors = 
 # Linear regression using the lm() function.
 lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data = mechaMpg)
 
-# Use summar() function to determine p and r-squared values for linear regression model.
+# Use summary() function to determine p and r-squared values for linear regression model.
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data = mechaMpg))
 
-# Deliv 2:
+# Deliverable 2:
 
 # Importing and reading in suspension_coil.csv as a dataframe.
 mechaCoil <- read.csv(file='Suspension_Coil.csv',check.names = F,stringsAsFactors = F)
@@ -26,7 +26,17 @@ lot_summary <- mechaCoil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean
                                                                        Variance=var(PSI),
                                                                        SD=sd(PSI))
 
-# Deliv 3:
+# Deliverable 3:
 
+# Using t.test() function to determine if PSI across lots stat diff from mu of 1500 psi.
+t.test(mechaCoil$PSI,mu=1500)
 
+# Now for each lot individually.
+# Test for lot 1.
+t.test(subset(mechaCoil,Manufacturing_Lot=="Lot1")$PSI,mu=1500)
 
+# Test for lot 2.
+t.test(subset(mechaCoil,Manufacturing_Lot=="Lot2")$PSI,mu=1500)
+
+# Test for lot 3.
+t.test(subset(mechaCoil,Manufacturing_Lot=="Lot3")$PSI,mu=1500)
