@@ -35,11 +35,12 @@ From results above, we can declare the mean PSI of all lots to be statistically 
 Looking at the lots individually, Lots 1 and 2 have p-values (1 and .6072 respectively) that are higher than our assumed significance level of .05. Therefore we fail to reject our null and can assume the mean PSIs of each lot are statistically similiar to that of the population mean of 1500. Lot 3, however, tells a different story. The t-test run on Lot 3 gives a p-value of .04168 which is less than the .05 level. We can then reject our null and conclude there is a statistical difference between Lot 3's PSI mean and the population mean. This, combined with the results found in Deliverable 2, certainly indicate Lot 3 is having some production issues.
 
 ## Study Design: MechaCar vs Competition:
-- It would be useful to conduct a study to determine if the MechaCar is rated as safe as its competitors. This would mean comparing the overall safety rating of MechaCar with those vehicles with closely similiar features made by competitors.
+- Consumers often prioritize purchase price as one of the most important factors in their buying decision. They will look at a vehicle and compare its price with that of competitors (i.e. same vehicle type/features). Therefore, a study to determine how MechaCar fares in this metric is important.
 
-- H0: Null hypothesis would be there is no significant difference in MechaCar's overall safety rating than that of its competitors. 
-- Ha: Alternative hypothesis is that MechaCar's safety rating is significantly different than that of its similiar-featured competitors.
+- We can first develop the hypotheses for our study:
+ - H0: Null hypothesis is the would be there is no difference in MechaCar's average retail price than that of its competitors. 
+ - Ha: Alternative hypothesis is that MechaCar's average retail price is statistically different (cheaper or more expensive) than that of its' competitors vehicles of the same type.
 
-- A multiple linear regression model can be used for this study. The dependent variable would be the car's overall safety rating. The independent variables would be: number of airbags, seat belt effectiveness score, rollover-test score, and safety dummy measurements. The resulting p-value can be compared to a fixed significance level of .05 to determine if the null hypothesis can be rejected.
+- A two-sample t-test known as pair t-test should be conducted since we are looking at observations in one dataset (MechaCar) with observations in another (competitors of same vehicle type). The resulting p-value generated will then be compared to an assumed significance level of .05 percent to determine whether we should reject or fail to reject the null hypothesis. More specifically, if our study's p-value is less than .05, this will indicate we can reject our null and assume MechaCar's average retail price is different than that of its competitors. 
 
-- Data would need to be collected for the variables listed above. The dataset should be reasonably large and ideally go back several years if possible.
+- The retail price dataset for MechaCar and its competitors would contain numerical, continuous data. The data needs to come from vehicles of similiar types. For example, it doesn't make sense to compare the MechaCar prices with vehicles that are completely different. Also, both would need to be sufficiently large and considered to be approxiametely normally distributed.
