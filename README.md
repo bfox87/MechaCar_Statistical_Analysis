@@ -8,9 +8,8 @@ A linear model that predicts the mpg of MechaCar protypes was created. The equat
 
 mpg = 6.267*vehicle_length + .001245*vehicle_weight + .06877*spolier_angle + 3.546*ground_clearance - 3.411*AWD - 104.0
 
-![mpg_regression](https://github.com/bfox87/bikesharing/blob/main/Screenshots/mpg_regression.PNG)
+![mpg_regression](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/mpg_regression.PNG)
 
-### Summary:
 - Vehicle length and ground clearance are statistically likely to provide a non-random amount of variance in the regression model above. This is inferred by looking at the Pr(>|t|) values. This means the length and ground clearance of the vehicle have a significant impact on the MechaCar prototype's mpg fuel efficiency. It should also be noted that the intercept is also statistically significiant, meaning that vehicle length and ground clearance may need some scaling or transforming to help improve the model's predictive power.
 - The slope of this linear model should not be considered zero. This is because we have enough evidence to reject our null hypothesis that the slope of the model is zero. The evidence is that p-value of the model (5.35e-11) is quite a bit smaller than our assumed significance level of 0.05%.
 - In general, this model does predict mpg of MechaCar prototypes effectively. This is deduced by looking at the the r-squared value, which is .7149 in this model. This means around 71% of the variability in mpg is explained with this model. 
@@ -31,11 +30,7 @@ T-tests were performed on all lots together and each lot individually to determi
 
 From results above, we can declare the mean PSI of all lots to be statistically similiar to the population mean of 1500 PSI. This is because the p-value of .06028 is higher than our assumed significance level of .05, meaning we fail to reject our null hypothesis of no statistical difference.
 
-![Lot1_t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/Lot1_t_test.PNG)
-
-![Lot2_t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/Lot2_t_test.PNG)
-
-![Lot3_t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/Lot3_t_test.PNG)
+![by_lot_t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/by_lot_t_test.PNG)
 
 Looking at the lots individually, Lots 1 and 2 have p-values (1 and .6072 respectively) that are higher than our assumed significance level of .05. Therefore we fail to reject our null and can assume the mean PSIs of each lot are statistically similiar to that of the population mean of 1500. Lot 3, however, tells a different story. The t-test run on Lot 3 gives a p-value of .04168 which is less than the .05 level. We can then reject our null and conclude there is a statistical difference between Lot 3's PSI mean and the population mean. This, combined with the results found in Deliverable 2, certainly indicate Lot 3 is having some production issues.
 
