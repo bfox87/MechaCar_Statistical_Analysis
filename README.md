@@ -6,7 +6,6 @@ AutosRUs is wanting to modernize their decision-making process, which means back
 ## Linear Regression to Predict MPG:
 A linear model that predicts the mpg of MechaCar protypes was created. The equation and output of this linear regression model is shown below:
 
-**Equation:**
 mpg = 6.267(vehicle_length) + .001245(vehicle_weight) + .06877(spoiler_angle) + 3.546(ground_clearance) - 3.411(AWD) - 104.0
 
 **Output**:
