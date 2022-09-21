@@ -1,4 +1,4 @@
-# MechaCar_Statistical_Analysis
+# Statistical Analysis of MechaCar Production Data
 
 ## Background & Purpose:
 AutosRUs is wanting to modernize their decision-making process, which means backing up their data analytics efforts with robust statistical analysis. Now, AutosRUs' newest prototype, the MechaCar, has run into production issues preventing further manufacturing progress. Our data analytics team must now use our statistical know-how with R to review the production data to glean any useful insights that may help fix the production issues.
@@ -6,6 +6,7 @@ AutosRUs is wanting to modernize their decision-making process, which means back
 ## Linear Regression to Predict MPG:
 A linear model that predicts the mpg of MechaCar protypes was created. The equation and output of this linear regression model is shown below:
 
+**Equation:**
 mpg = 6.267(vehicle_length) + .001245(vehicle_weight) + .06877(spoiler_angle) + 3.546(ground_clearance) - 3.411(AWD) - 104.0
 
 **Output**:
@@ -16,7 +17,7 @@ mpg = 6.267(vehicle_length) + .001245(vehicle_weight) + .06877(spoiler_angle) + 
 - In general, this model does predict mpg of MechaCar prototypes effectively. This is deduced by looking at the the r-squared value, which is .7149 in this model. This means around 71% of the variability in mpg is explained with this model. 
 
 ## Summary Statistics on Suspension Coils:
-Summary statistics were generated on the weight capacities (PSI levels) of the suspension coils to see if the manufacturing process is consistent across production lots. Statistics for all lots (total summary) were first generated, followed by results for each lot individually.
+Summary statistics were generated on the weight capacities (PSI levels) of the suspension coils to see if the manufacturing process is consistent across production lots. Statistics across all lots together were first generated, followed by results for each lot individually.
 
 **All Lots:**
 ![total_summary](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/total_summary.PNG)
@@ -31,20 +32,20 @@ T-tests were performed on all lots together and each lot individually to determi
 
 ![t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/t_test.PNG)
 
-From results above, we can declare the mean PSI of all lots to be statistically similiar to the population mean of 1500 PSI. This is because the p-value of .06028 is higher than our assumed significance level of .05, meaning we fail to reject our null hypothesis of no statistical difference.
+From the results above, we can declare the mean PSI of all lots to be statistically similiar to the population mean of 1500 PSI. This is because the p-value of .06028 is higher than our assumed significance level of .05, meaning we fail to reject our null hypothesis of no statistical difference.
 
 **Results by Lot:**
 ![by_lot_t_test](https://github.com/bfox87/MechaCar_Statistical_Analysis/blob/main/Screenshots/by_lot_t_test.PNG)
 
-Looking at the lots individually above, Lots 1 and 2 have p-values (1 and .6072 respectively) that are higher than our assumed significance level of .05. Therefore we fail to reject our null and can assume the mean PSIs of each lot are statistically similiar to that of the population mean of 1500. Lot 3, however, tells a different story. The t-test run on Lot 3 gives a p-value of .04168 which is less than the .05 level. We can then reject our null and conclude there is a statistical difference between Lot 3's PSI mean and the population mean. This, combined with the results found in Deliverable 2, certainly indicate Lot 3 as having some production issues.
+Looking at the lots individually above, Lots 1 and 2 have p-values (1 and .6072 respectively) that are higher than our assumed significance level of .05. Therefore, we fail to reject our null and can assume the mean PSIs of each lot are statistically similiar to that of the population mean of 1500. Lot 3, however, tells a different story. The t-test run on Lot 3 gives a p-value of .04168 which is less than the .05 level. We can then reject our null and conclude there is a statistical difference between Lot 3's PSI mean and the population mean. This, combined with the results found in Deliverable 2, certainly indicate Lot 3 as having some production issues.
 
 ## Study Design: MechaCar vs Competition:
-- Consumers often prioritize purchase price as one of the most important factors in their buying decision. It's common practice to look at a vehicle and compare its price with that of its competitors (i.e. same vehicle type/features). Therefore, when the MechaCar goes to market a study of average retail price is important to determine how the vehicle fares in this metric.
+- Consumers often prioritize purchase price as one of the most important factors in their buying decision. It's common practice to look at a vehicle and compare its price with that of its competitors (i.e. same vehicle type/features). As such, when the MechaCar goes to market a study of average retail price is important to determine how the vehicle fares in this metric.
 
 - We can first develop the hypotheses for our study:
-    - H0: Null hypothesis is there is no difference in MechaCar's average retail price than that of its competitors.
+    - H0: Null hypothesis is there is no difference in MechaCar's average retail price from that of its competitors.
     - Ha: Alternative hypothesis is that MechaCar's average retail price is statistically different (cheaper or more expensive) than that of its competitor's vehicles of the same type.
 
-- A two-sample t-test can be conducted since we are looking at observations in one sample (MechaCar) with observations in another (competitors of same vehicle type). The resulting p-value generated will then be compared to an assumed significance level of .05 percent to determine whether we should reject or fail to reject the null hypothesis. More specifically, if our study's p-value is less than .05, this will indicate we can reject our null and assume MechaCar's average retail price is different than that of its competitors. 
+- A two-sample t-test can be conducted since we are looking at observations in one sample (MechaCar) with observations in another (competitors of same vehicle type). The resulting p-value generated will then be compared to an assumed significance level of .05 percent to determine whether we should reject or fail to reject our null hypothesis. More specifically, if our study's p-value is less than .05, this will indicate we can reject our null and assume MechaCar's average retail price is different than that of its competitors. 
 
-- The retail price dataset for MechaCar and its competitors will contain numerical, continuous data. The data needs to come from vehicles of similiar types. For example, it doesn't make sense to compare MechaCar's avg retail prices with those of motorcycles. Also, the dataset needs to be sufficiently large and considered to be approxiametely normally distributed.
+- The retail price dataset for MechaCar and its competitors will contain numerical, continuous data. The data needs to come from vehicles of similiar types. For example, it doesn't make sense to compare MechaCar's retail prices with those of motorcycles. Also, the dataset needs to be sufficiently large and considered to be approximately normally distributed.
